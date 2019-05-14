@@ -1,0 +1,16 @@
+{% extends 'theme/main.html' %}
+
+
+{% block news %}
+{% for theme in theme.all %}
+    <div class = "card" style = "width: 18rem; margin:auto;" >
+        <div class = "card-body" style ="background-color: #212529; color:aliceblue;">
+    <h1 class="card-title ">{{theme.title}}</h1>
+    <p class="card-subtitle mb-2 text-muted ">{{theme.pub_date }}</p>
+    <p class="card-text">{{theme.body}} </p>
+    <a class="card-link"  href="{% url 'edit' pk=theme.pk %}">수정</a>
+    <a class="card-link"  href="{% url 'remove' pk=theme.pk %}">삭제</a>
+    </div>
+    </div>
+    {% endfor %}
+{% endblock %}

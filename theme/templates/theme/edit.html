@@ -1,0 +1,10 @@
+{% extends 'theme/main.html' %}
+
+{% block news %}
+
+    <form method="POST">{% csrf_token %}
+        {{ form.as_table }}
+        <button type = "submit" class = "btn-default">Save</button>
+        
+    </form>
+{% endblock %}
